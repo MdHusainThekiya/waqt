@@ -2,21 +2,23 @@
 
 React Native mobile app with a Node.js backend to remind users about prayer times — fast, offline-first, and privacy-conscious.
 
+### 1. Onboarding
+![Onboarding](docs/screenshots/onboarding.png)
+
+### 2. Home & Calendar
+![Home & Calendar](docs/screenshots/home_and_calendar.png)
+
+### 3. Personalize Settings
+![Personalize Settings](docs/screenshots/personalize-settings.png)
+
 ## Live App
 
 Current version: **v1.0.0**
-
-Download the Android APK:
-
-https://raw.githubusercontent.com/MdHusainThekiya/waqt/main/WaqtApp/app-release/Waqt-v1.0.0.apk
-
+Download the Android APK: https://raw.githubusercontent.com/MdHusainThekiya/waqt/main/WaqtApp/app-release/Waqt-v1.0.0.apk
 
 ## Live backend
 The backend is deployed on Vercel:
-
 https://waqt-backend.vercel.app
-
-This serves the API used by the mobile app. Make sure to set required environment variables in Vercel for production (e.g., database connection string).
 
 ## Features
 Waqt provides the following features out of the box:
