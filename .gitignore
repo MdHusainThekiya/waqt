@@ -1,0 +1,82 @@
+Backend/.env
+Backend/node_modules
+WaqtApp/.env
+WaqtApp/node_modules
+
+
+# OSX
+#
+WaqtApp/.DS_Store
+
+# Xcode
+#
+WaqtApp/build/
+WaqtApp/*.pbxuser
+!WaqtApp/default.pbxuser
+WaqtApp/*.mode1v3
+!WaqtApp/default.mode1v3
+WaqtApp/*.mode2v3
+!WaqtApp/default.mode2v3
+WaqtApp/*.perspectivev3
+!WaqtApp/default.perspectivev3
+WaqtApp/xcuserdata
+WaqtApp/*.xccheckout
+WaqtApp/*.moved-aside
+WaqtApp/DerivedData
+WaqtApp/*.hmap
+WaqtApp/*.ipa
+WaqtApp/*.xcuserstate
+WaqtApp/.xcode.env.local
+
+# Android/IntelliJ
+#
+WaqtApp/android/app/google-services.json
+WaqtApp/build/
+WaqtApp/.idea
+WaqtApp/.gradle
+WaqtApp/local.properties
+WaqtApp/*.iml
+WaqtApp/*.hprof
+WaqtApp/.cxx/
+WaqtApp/*.keystore
+!WaqtApp/debug.keystore
+WaqtApp/.kotlin/
+
+# node.js
+#
+WaqtApp/node_modules/
+WaqtApp/npm-debug.log
+WaqtApp/yarn-error.log
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+WaqtApp/**/fastlane/report.xml
+WaqtApp/**/fastlane/Preview.html
+WaqtApp/**/fastlane/screenshots
+WaqtApp/**/fastlane/test_output
+
+# Bundle artifact
+WaqtApp/*.jsbundle
+
+# Ruby / CocoaPods
+WaqtApp/**/Pods/
+WaqtApp/vendor/bundle/
+
+# Temporary files created by Metro to check the health of the file watcher
+WaqtApp/.metro-health-check*
+
+# testing
+WaqtApp/coverage
+
+# Yarn
+WaqtApp/.yarn/*
+!WaqtApp/.yarn/patches
+!WaqtApp/.yarn/plugins
+!WaqtApp/.yarn/releases
+!WaqtApp/.yarn/sdks
+!WaqtApp/.yarn/versions
