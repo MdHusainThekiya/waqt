@@ -17,22 +17,38 @@ app.use(
 );
 app.use(express.json());
 app.use(morgan('dev'));
-  
+
 app.get(['/','/health'], (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
 app.use('/api', userRouter);
 
-const bootstrap = async () => {
-  await connectDatabase();
-  app.listen(env.port, () => {
-    console.log(`API listening on port ${env.port}`);
-  });
+// For Vercel serverless functions we should export the app and avoid calling
+// app.listen. Connect to the database lazily on the first request to avoid
+// blocking cold starts.
+
+let isDbConnected = false;
+
+const ensureDb = async () => {
+  if (!isDbConnected) {
+    await connectDatabase();
+    isDbConnected = true;
+  }
 };
 
-bootstrap().catch(error => {
-  console.error('Failed to start server', error);
-  process.exit(1);
-});
+// Export the Express app for local usage and testing
+export { app };
+
+// Default export compatible with @vercel/node. It ensures DB connection and
+// passes control to the Express app.
+export default async function handler(req: any, res: any) {
+  try {
+    await ensureDb();
+    return app(req, res);
+  } catch (error) {
+    console.error('Serverless handler error', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
 
